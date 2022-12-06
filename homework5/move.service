@@ -1,0 +1,12 @@
+[Unit] 
+Description=Mover
+After=network.target 
+
+[Service] 
+User=root 
+ExecStart=/bin/bash /home/commands.sh 
+RestartSec=5s 
+Restart=on-failure 
+
+[Install] 
+WantedBy=multi-user.target
