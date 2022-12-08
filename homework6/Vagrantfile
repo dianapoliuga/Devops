@@ -1,0 +1,12 @@
+ENV["VAGRANT_EXPERIMENTAL"] = "disks"
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "ubuntu/focal64"
+
+  config.vm.disk :disk, size: "300MB", name: "Disk1"
+  config.vm.disk :disk, size: "300MB", name: "Disk2"
+  config.vm.disk :disk, size: "300MB", name: "Disk3"
+  config.vm.disk :disk, size: "300MB", name: "Disk4"
+
+  config.vm.provision "shell", path: "script.sh"
+end
